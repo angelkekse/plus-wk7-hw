@@ -1,0 +1,10 @@
+h1 {
+  text-align: center;
+  color: orange;
+}
+a.btn,
+a.btn-info {
+  display: block;
+  margin: 0 auto;
+  max-width: 13%;
+}
