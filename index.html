@@ -12,12 +12,55 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Roboto+Mono:wght@200;500&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <div class="container">
-      <h1>🐅🐅🐅 r a w r 🐅🐅🐅</h1>
-      <br /><br /><br />
-      <a href="" class="btn btn-info">meow</a>
+    <div class="container weather-app light">
+      <div>
+        <form>
+          <input
+            type="search"
+            class="form-control search"
+            placeholder="search"
+          />
+        </form>
+      </div>
+      <h1 class="light">
+        What's the<br />
+        weather like<br />
+        in<br />
+        <span class="title-city">krakow</span> <br />
+        ?<br />
+      </h1>
+<div class="today">
+<ul>
+  <li>It is currently <span class="changes"> _ °C</span>.</li>
+  <li>Today, it will get up to <span class="changes"> _ °C</span>.</li>
+</ul>
+</div>
+
+<div class="other-info">
+  <ul>
+<li>  The UV rating is <span class="changes">_ </span>.</li>
+<li>  Humidity is <span class="changes">_ %</span>.</li>
+<li> Chance of precipitation is <span class="changes">_ %</span>.</li>
+  </ul>
+</div>
+</p>
+      <div>
+        <button class="btn current-location" id="current-location">
+          check current location
+        </button>
+      </div>
+      <div>
+        <a href="" target="_blank" class="footnote">Open-source code</a> by
+        Angel Huang
+      </div>
     </div>
   </body>
   <script src="src/app.js"></script>
