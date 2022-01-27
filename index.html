@@ -31,36 +31,38 @@
             type="search"
             class="form-control search"
             placeholder="search"
+            id="city-search"
           />
         </form>
       </div>
-      
+      <br />
       <p class="date-and-time" id="date-and-time"> DATE AND TIME </p>
       
       <h1 class="light">
         What's the<br />
         weather like<br />
         in<br />
-        <span class="title-city">Cotonou </span> <br />
-        ?<br />
+        <span class="title-city" id="title-city">_ _ _ </span> <br />
+        ?<br /><br />
       </h1>
       <div class="row">
 <div class="col-5">
   <ul>
   <li>It is currently <span class="changes"> 13 °C</span>.</li>
-  <li>Today's maximum is <span class="changes"> 14 °C</span>.</li>
+  <li>Today's maximum is <span class="changes" id="changed-city-input-temp"> 14 °C</span>.</li>
 </ul>
 </div>
 <div class="col-2"> <img src="src/sunny.png" alt="today's weather" class="image"></div>
 <div class="col-5">
   <ul>
-<li>  The UV rating is <span class="changes">_ </span>.</li>
-<li>  Humidity is <span class="changes">_ %</span>.</li>
-<li> Chance of precipitation is <span class="changes">_ %</span>.</li>
+<li>  The UV rating is <span class="changes"> 3 (low)</span>.</li>
+<li>  Humidity is <span class="changes">34 %</span>.</li>
+<li> Chance of precipitation is <span class="changes">40 %</span>.</li>
   </ul>
 </div>
 </div>
 </p>
+<br />
       <div>
         <button class="btn current-location" id="current-location">
           check current location

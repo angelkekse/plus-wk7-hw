@@ -14,8 +14,9 @@
 
 p.date-and-time {
   margin-top: 43px;
-  font-family: "Source Code Pro", monospace;
+  font-family: "Abril Fatface", cursive;
   text-align: right;
+
   color: #33ccff;
 }
 
@@ -50,6 +51,11 @@ p.date-and-time {
 
 .image {
   text-align: center;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
 }
 
 li {
