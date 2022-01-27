@@ -42,21 +42,21 @@ function updateCity(response) {
   console.log(response); // to find other data
   let titleCity = document.querySelector("#title-city");
   titleCity.innerHTML = response.data.name;
-  let output1 = Math.round(response.data.main.temp);
+
   let currentTemp = document.querySelector("#changed-city-now");
-  currentTemp.innerHTML = `${output1}°C`;
-  let output2 = Math.round(response.data.main.temp_max);
+  currentTemp.innerHTML = Math.round(response.data.main.temp);
+
   let maxTemp = document.querySelector("#changed-city-input-temp-high");
-  maxTemp.innerHTML = `${output2}°C`;
-  let output3 = Math.round(response.data.main.temp_min);
+  maxTemp.innerHTML = Math.round(response.data.main.temp_max);
+
   let minTemp = document.querySelector("#changed-city-input-temp-low");
-  minTemp.innerHTML = `${output3}°C`;
-  let output4 = Math.round(response.data.wind.speed);
+  minTemp.innerHTML = Math.round(response.data.main.temp_min);
+
   let newWind = document.querySelector("#changed-city-wind");
-  newWind.innerHTML = `${output4} kph`;
-  let output5 = response.data.main.humidity;
+  newWind.innerHTML = Math.round(response.data.wind.speed);
+
   let newHumidity = document.querySelector("#changed-city-humidity");
-  newHumidity.innerHTML = `${output5} %`;
+  newHumidity.innerHTML = response.data.main.humidity;
 }
 
 let searchBox = document.querySelector("form");
