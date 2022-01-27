@@ -72,13 +72,14 @@ button.btn.current-location:hover {
   color: #000;
 }
 
-.footnote {
+a.footnote {
   color: #ff9900;
   text-decoration: none;
 }
 
-.footnote:hover {
+a.footnote:hover {
   color: #33ccff;
   text-decoration: none;
   cursor: pointer;
+  font-weight: 500;
 }
