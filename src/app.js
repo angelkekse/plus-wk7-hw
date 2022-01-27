@@ -46,12 +46,17 @@ function updateCity(response) {
   let minTemp = document.querySelector("#changed-city-input-temp-low");
   let newWind = document.querySelector("#changed-city-wind");
   let newHumidity = document.querySelector("#changed-city-humidity");
+  let weatherElement = document.querySelector("#weather-icon");
   titleCity.innerHTML = response.data.name;
   currentTemp.innerHTML = Math.round(response.data.main.temp);
   maxTemp.innerHTML = Math.round(response.data.main.temp_max);
   minTemp.innerHTML = Math.round(response.data.main.temp_min);
   newWind.innerHTML = Math.round(response.data.wind.speed);
   newHumidity.innerHTML = response.data.main.humidity;
+  weatherElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 
 let searchBox = document.querySelector("form");
