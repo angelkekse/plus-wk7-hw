@@ -44,6 +44,7 @@ function updateCity(response) {
   let currentTemp = document.querySelector("#changed-city-now");
   let maxTemp = document.querySelector("#changed-city-input-temp-high");
   let minTemp = document.querySelector("#changed-city-input-temp-low");
+  let newDescription = document.querySelector("#changed-city-desc");
   let newWind = document.querySelector("#changed-city-wind");
   let newHumidity = document.querySelector("#changed-city-humidity");
   let weatherElement = document.querySelector("#weather-icon");
@@ -51,6 +52,7 @@ function updateCity(response) {
   currentTemp.innerHTML = Math.round(response.data.main.temp);
   maxTemp.innerHTML = Math.round(response.data.main.temp_max);
   minTemp.innerHTML = Math.round(response.data.main.temp_min);
+  newDescription.innerHTML = response.data.weather[0].description;
   newWind.innerHTML = Math.round(response.data.wind.speed);
   newHumidity.innerHTML = response.data.main.humidity;
   weatherElement.setAttribute(
