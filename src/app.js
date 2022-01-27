@@ -41,21 +41,16 @@ function newCity(event) {
 function updateCity(response) {
   console.log(response); // to find other data
   let titleCity = document.querySelector("#title-city");
-  titleCity.innerHTML = response.data.name;
-
   let currentTemp = document.querySelector("#changed-city-now");
-  currentTemp.innerHTML = Math.round(response.data.main.temp);
-
   let maxTemp = document.querySelector("#changed-city-input-temp-high");
-  maxTemp.innerHTML = Math.round(response.data.main.temp_max);
-
   let minTemp = document.querySelector("#changed-city-input-temp-low");
-  minTemp.innerHTML = Math.round(response.data.main.temp_min);
-
   let newWind = document.querySelector("#changed-city-wind");
-  newWind.innerHTML = Math.round(response.data.wind.speed);
-
   let newHumidity = document.querySelector("#changed-city-humidity");
+  titleCity.innerHTML = response.data.name;
+  currentTemp.innerHTML = Math.round(response.data.main.temp);
+  maxTemp.innerHTML = Math.round(response.data.main.temp_max);
+  minTemp.innerHTML = Math.round(response.data.main.temp_min);
+  newWind.innerHTML = Math.round(response.data.wind.speed);
   newHumidity.innerHTML = response.data.main.humidity;
 }
 
@@ -66,7 +61,9 @@ function searchLoc(position) {
   let apiUrlEndpoint = "https://api.openweathermap.org/data/2.5/weather?";
   let apiKey = "3afd3b68923f6dfb599ab1fd13851db5";
   let units = "metric";
-  let apiUrl = `${apiUrlEndpoint}lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=${units}`;
+  let latitude = position.coords.latitude;
+  let longitude = position.coords.longitude;
+  let apiUrl = `${apiUrlEndpoint}lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(updateCity);
   console.log(apiUrl);
 }

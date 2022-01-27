@@ -16,14 +16,20 @@ p.date-and-time {
   margin-top: 43px;
   font-family: "Abril Fatface", cursive;
   text-align: right;
-
   color: #33ccff;
+  max-width: -30%;
+}
+
+.date-and-time:hover {
+  text-decoration: wavy line-through;
+  text-decoration-color: rgb(139, 226, 255, 0.5);
+  text-decoration-thickness: 13px;
 }
 
 .form-control.search {
   font-family: "Source Code Pro", monospace;
   text-align: right;
-  padding: 5px;
+  padding: 4px;
   border: 1px dashed #ff9900;
   border-radius: 3px;
   position: fixed;
@@ -35,6 +41,9 @@ p.date-and-time {
 .form-control:hover {
   border: 1px dashed #33ccff;
   cursor: text;
+  text-decoration: line-through;
+  text-decoration-color: rgb(139, 226, 255, 0.5);
+  text-decoration-thickness: 13px;
 }
 
 .title-city {
@@ -42,6 +51,9 @@ p.date-and-time {
   text-transform: uppercase;
   font-size: 230%;
   color: #ff9900;
+  text-decoration: line-through;
+  text-decoration-color: rgb(255, 185, 99, 0.5);
+  text-decoration-thickness: 43px;
 }
 
 .today {
@@ -84,6 +96,9 @@ button.btn.current-location:hover {
   cursor: pointer;
   border: 1px dashed #33ccff;
   color: #000;
+  text-decoration: line-through;
+  text-decoration-color: rgb(139, 226, 255, 0.5);
+  text-decoration-thickness: 13px;
 }
 
 a.footnote {
@@ -97,6 +112,9 @@ a.footnote:hover {
   color: #33ccff;
   text-decoration: none;
   cursor: pointer;
-  text-transform: uppercase;
+
   font-weight: 500;
+  text-decoration: line-through;
+  text-decoration-color: rgb(139, 226, 255, 0.5);
+  text-decoration-thickness: 13px;
 }
