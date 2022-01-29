@@ -112,7 +112,29 @@ a.footnote:hover {
   color: #33ccff;
   text-decoration: none;
   cursor: pointer;
+  font-weight: 500;
+  text-decoration: line-through;
+  text-decoration-color: rgb(139, 226, 255, 0.5);
+  text-decoration-thickness: 13px;
+}
 
+.itty-bitty {
+  font-size: 73%;
+}
+
+li.convert,
+a.convert-celsius,
+a.convert-fahrenheit {
+  color: #ec6e4c;
+  text-align: right;
+  font-size: small;
+  text-decoration: none;
+}
+.convert-celsius:hover,
+.convert-fahrenheit:hover {
+  color: #ec6e4c;
+  text-decoration: none;
+  cursor: pointer;
   font-weight: 500;
   text-decoration: line-through;
   text-decoration-color: rgb(139, 226, 255, 0.5);

@@ -25,8 +25,6 @@ function formatDate() {
 let timeDisplay = document.querySelector("#date-and-time");
 timeDisplay.innerHTML = formatDate();
 
-//////////////////////////////////
-
 function newCity(event) {
   event.preventDefault();
   let input = document.querySelector("#city-search");
@@ -48,10 +46,13 @@ function updateCity(response) {
   let newWind = document.querySelector("#changed-city-wind");
   let newHumidity = document.querySelector("#changed-city-humidity");
   let weatherElement = document.querySelector("#weather-icon");
+  celsiusTemperature1 = response.data.main.temp;
+  celsiusTemperature2 = response.data.main.temp_max;
+  celsiusTemperature3 = response.data.main.temp_min;
   titleCity.innerHTML = response.data.name;
-  currentTemp.innerHTML = Math.round(response.data.main.temp);
-  maxTemp.innerHTML = Math.round(response.data.main.temp_max);
-  minTemp.innerHTML = Math.round(response.data.main.temp_min);
+  currentTemp.innerHTML = `${Math.round(celsiusTemperature1)}°C`;
+  maxTemp.innerHTML = `${Math.round(celsiusTemperature2)}°C`;
+  minTemp.innerHTML = `${Math.round(celsiusTemperature3)}°C`;
   newDescription.innerHTML = response.data.weather[0].description;
   newWind.innerHTML = Math.round(response.data.wind.speed);
   newHumidity.innerHTML = response.data.main.humidity;
@@ -79,6 +80,43 @@ function getPlaceHere(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(searchLoc);
 }
+
+function convertToCelsius(event) {
+  event.preventDefault();
+  let changedCityTemp1 = document.querySelector("#changed-city-now");
+  changedCityTemp1.innerHTML = `${Math.round(celsiusTemperature1)}°C`;
+  let changedCityTemp2 = document.querySelector(
+    "#changed-city-input-temp-high"
+  );
+  changedCityTemp2.innerHTML = `${Math.round(celsiusTemperature2)}°C`;
+  let changedCityTemp3 = document.querySelector("#changed-city-input-temp-low");
+  changedCityTemp3.innerHTML = `${Math.round(celsiusTemperature3)}°C`;
+}
+
+function convertToFahrenheit(event) {
+  event.preventDefault();
+  let fahrenheitTemperature1 = Math.round((celsiusTemperature1 * 9) / 4 + 32);
+  let changedCityTemp1 = document.querySelector("#changed-city-now");
+  changedCityTemp1.innerHTML = `${fahrenheitTemperature1}°F`;
+  let fahrenheitTemperature2 = Math.round((celsiusTemperature2 * 9) / 4 + 32);
+  let changedCityTemp2 = document.querySelector(
+    "#changed-city-input-temp-high"
+  );
+  changedCityTemp2.innerHTML = `${fahrenheitTemperature2}°F`;
+  let fahrenheitTemperature3 = Math.round((celsiusTemperature3 * 9) / 4 + 32);
+  let changedCityTemp3 = document.querySelector("#changed-city-input-temp-low");
+  changedCityTemp3.innerHTML = `${fahrenheitTemperature3}°F`;
+}
+
+let celsiusTemperature1 = null;
+let celsiusTemperature2 = null;
+let celsiusTemperature3 = null;
+
+let convertFahrenheit = document.querySelector("#tempF");
+convertFahrenheit.addEventListener("click", convertToFahrenheit);
+
+let convertCelsius = document.querySelector("#tempC");
+convertCelsius.addEventListener("click", convertToCelsius);
 
 let currentLoc = document.querySelector("#current-location");
 currentLoc.addEventListener("click", getPlaceHere);
