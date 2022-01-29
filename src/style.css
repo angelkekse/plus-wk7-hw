@@ -124,14 +124,19 @@ a.footnote:hover {
 
 li.convert,
 a.convert-celsius,
-a.convert-fahrenheit {
+a.convert-fahrenheit,
+a.convert-kph,
+a.convert-mph {
   color: #ec6e4c;
   text-align: right;
   font-size: small;
   text-decoration: none;
 }
+
 .convert-celsius:hover,
-.convert-fahrenheit:hover {
+.convert-fahrenheit:hover,
+.convert-kph:hover,
+.convert-mph:hover {
   color: #ec6e4c;
   text-decoration: none;
   cursor: pointer;
