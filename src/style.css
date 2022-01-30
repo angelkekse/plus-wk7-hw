@@ -126,7 +126,7 @@ li.convert,
 a.convert-celsius,
 a.convert-fahrenheit,
 a.convert-kph,
-a.convert-mph {
+a.convert-knots {
   color: #ec6e4c;
   text-align: right;
   font-size: small;
@@ -136,7 +136,7 @@ a.convert-mph {
 .convert-celsius:hover,
 .convert-fahrenheit:hover,
 .convert-kph:hover,
-.convert-mph:hover {
+.convert-knots:hover {
   color: #ec6e4c;
   text-decoration: none;
   cursor: pointer;
