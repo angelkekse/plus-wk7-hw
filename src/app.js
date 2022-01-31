@@ -1,4 +1,3 @@
-let now = new Date();
 function formatDate() {
   let days = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"];
   let day = days[now.getDay()];
@@ -22,8 +21,6 @@ function formatDate() {
   let dateStatement = `${day} ${dateNum} ${month} @ ${clock}`;
   return dateStatement;
 }
-let timeDisplay = document.querySelector("#date-and-time");
-timeDisplay.innerHTML = formatDate();
 
 function newCity(event) {
   event.preventDefault();
@@ -62,9 +59,6 @@ function updateCity(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
 }
-
-let searchBox = document.querySelector("form");
-searchBox.addEventListener("submit", newCity);
 
 function searchLoc(position) {
   let apiUrlEndpoint = "https://api.openweathermap.org/data/2.5/weather?";
@@ -122,6 +116,14 @@ function convertIntoKNOTS(event) {
   let changedWind2 = document.querySelector("#changed-city-wind");
   changedWind2.innerHTML = `${newKNOTSWind} knots`;
 }
+
+let now = new Date();
+
+let timeDisplay = document.querySelector("#date-and-time");
+timeDisplay.innerHTML = formatDate();
+
+let searchBox = document.querySelector("form");
+searchBox.addEventListener("submit", newCity);
 
 let celsiusTemperature1 = null;
 let celsiusTemperature2 = null;
