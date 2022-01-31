@@ -116,9 +116,12 @@ function convertIntoKPH(event) {
   changedWind1.innerHTML = `${newKPHWind} kph`;
 }
 
-//let fahrenheitTemperature1 = Math.round((celsiusTemperature1 * 9) / 4 + 32);
-//let changedCityTemp1 = document.querySelector("#changed-city-now");
-//changedCityTemp1.innerHTML = `${fahrenheitTemperature1}°F`;
+function convertIntoKNOTS(event) {
+  event.preventDefault();
+  let newKNOTSWind = Math.round(newWindSpeed);
+  let changedWind2 = document.querySelector("#changed-city-wind");
+  changedWind2.innerHTML = `${newKNOTSWind} knots`;
+}
 
 let celsiusTemperature1 = null;
 let celsiusTemperature2 = null;
@@ -128,11 +131,14 @@ let newWindSpeed = null;
 let convertFahrenheit = document.querySelector("#tempF");
 convertFahrenheit.addEventListener("click", convertToFahrenheit);
 
+let convertCelsius = document.querySelector("#tempC");
+convertCelsius.addEventListener("click", convertToCelsius);
+
 let convertKPH = document.querySelector("#kilometresPerHour");
 convertKPH.addEventListener("click", convertIntoKPH);
 
-let convertCelsius = document.querySelector("#tempC");
-convertCelsius.addEventListener("click", convertToCelsius);
+let convertKNOTS = document.querySelector("#knotsMeasure");
+convertKNOTS.addEventListener("click", convertIntoKNOTS);
 
 let currentLoc = document.querySelector("#current-location");
 currentLoc.addEventListener("click", getPlaceHere);
