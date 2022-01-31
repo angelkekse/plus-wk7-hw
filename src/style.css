@@ -13,7 +13,7 @@
 }
 
 p.date-and-time {
-  margin-top: 43px;
+  margin-top: 34px;
   font-family: "Abril Fatface", cursive;
   text-align: right;
   color: #33ccff;
@@ -101,13 +101,19 @@ button.btn.current-location:hover {
   text-decoration-thickness: 13px;
 }
 
-a.footnote {
+a.footnote1 {
   font-family: "Source Code Pro", monospace;
   color: #ff9900;
   text-decoration: none;
 }
 
-a.footnote:hover {
+a.footnote2 {
+  font-family: "Abril Fatface", cursive;
+  color: #990000;
+  text-decoration: none;
+}
+
+a.footnote1:hover {
   font-family: "Source Code Pro", monospace;
   color: #33ccff;
   text-decoration: none;
@@ -118,6 +124,16 @@ a.footnote:hover {
   text-decoration-thickness: 13px;
 }
 
+a.footnote2:hover {
+  font-family: "Abril Fatface", cursive;
+  color: #990000;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 500;
+  text-decoration: wavy line-through;
+  text-decoration-color: rgb(153, 0, 0, 0.5);
+  text-decoration-thickness: 13px;
+}
 .itty-bitty {
   font-size: 73%;
 }
