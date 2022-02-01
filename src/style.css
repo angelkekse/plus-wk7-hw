@@ -161,3 +161,30 @@ a.convert-knots {
   text-decoration-color: rgb(139, 226, 255, 0.5);
   text-decoration-thickness: 13px;
 }
+
+hr {
+  border: none;
+  border-top: 4px dashed #990000;
+  color: #990000;
+  background-color: #fff;
+}
+
+.weather-forecast-day {
+  font-family: "Abril Fatface", cursive;
+  text-align: center;
+  color: #aaa;
+}
+
+.weather-forecast-temperature {
+  text-align: center;
+}
+
+.wfmax {
+  font-family: "Abril Fatface", cursive;
+  color: #ec6e4c;
+}
+
+.wfmin {
+  font-family: "Abril Fatface", cursive;
+  color: #ff9900;
+}
