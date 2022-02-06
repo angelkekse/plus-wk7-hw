@@ -22,7 +22,8 @@ function formatDate() {
   return dateStatement;
 }
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
   let days = ["Wed", "Thur", "Fri", "Sat", "Sun", "Mon"];
   let forecastHTML = `<div class="row">`;
@@ -49,11 +50,22 @@ function newCity(event) {
   event.preventDefault();
   let input = document.querySelector("#city-search");
   document.querySelector("#title-city").innerHTML = input.value;
-  let apiUrlEndpoint = "https://api.openweathermap.org/data/2.5/weather?";
+  let apiUrlEndpoint = "https://api.openweathermap.org/data/2.5/";
   let apiKey = "3afd3b68923f6dfb599ab1fd13851db5";
   let units = "metric";
-  let apiUrl = `${apiUrlEndpoint}q=${input.value}&appid=${apiKey}&units=${units}`;
+  let apiUrl = `${apiUrlEndpoint}weather?q=${input.value}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(updateCity);
+}
+
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiUrlEndpoint = "https://api.openweathermap.org/data/2.5/";
+  let apiKey = "3afd3b68923f6dfb599ab1fd13851db5";
+  let units = "metric";
+  let lat = coordinates.lat;
+  let lon = coordinates.lon;
+  let apiURL = `${apiUrlEndpoint}onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`;
+  axios.get(apiURL).then(displayForecast);
 }
 
 function updateCity(response) {
@@ -75,12 +87,13 @@ function updateCity(response) {
   maxTemp.innerHTML = `${Math.round(celsiusTemperature2)}°C`;
   minTemp.innerHTML = `${Math.round(celsiusTemperature3)}°C`;
   newDescription.innerHTML = response.data.weather[0].description;
-  newWind.innerHTML = `${Math.round(newWindSpeed)} knots`;
+  newWind.innerHTML = `${Math.round(newWindSpeed)} kts`;
   newHumidity.innerHTML = response.data.main.humidity;
   weatherElement.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+  getForecast(response.data.coord);
 }
 
 function searchLoc(position) {
@@ -137,7 +150,7 @@ function convertIntoKNOTS(event) {
   event.preventDefault();
   let newKNOTSWind = Math.round(newWindSpeed);
   let changedWind2 = document.querySelector("#changed-city-wind");
-  changedWind2.innerHTML = `${newKNOTSWind} knots`;
+  changedWind2.innerHTML = `${newKNOTSWind} kts`;
 }
 
 let now = new Date();
@@ -167,5 +180,3 @@ convertKNOTS.addEventListener("click", convertIntoKNOTS);
 
 let currentLoc = document.querySelector("#current-location");
 currentLoc.addEventListener("click", getPlaceHere);
-
-displayForecast();
