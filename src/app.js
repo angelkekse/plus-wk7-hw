@@ -49,8 +49,7 @@ function displayForecast(response) {
     )}°C</span> <span class="wfmin">${Math.round(forecastDay.temp.min)}°C</span>
     </div>
     </div>
-    
-    `;
+        `;
     }
   });
 
@@ -70,7 +69,6 @@ function newCity(event) {
 }
 
 function getForecast(coordinates) {
-  console.log(coordinates);
   let apiUrlEndpoint = "https://api.openweathermap.org/data/2.5/";
   let apiKey = "3afd3b68923f6dfb599ab1fd13851db5";
   let units = "metric";
@@ -81,7 +79,6 @@ function getForecast(coordinates) {
 }
 
 function updateCity(response) {
-  console.log(response); // to find other data
   let titleCity = document.querySelector("#title-city");
   let currentTemp = document.querySelector("#changed-city-now");
   let maxTemp = document.querySelector("#changed-city-input-temp-high");
@@ -116,39 +113,11 @@ function searchLoc(position) {
   let longitude = position.coords.longitude;
   let apiUrl = `${apiUrlEndpoint}lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(updateCity);
-  console.log(apiUrl);
 }
 
 function getPlaceHere(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(searchLoc);
-}
-
-function convertToCelsius(event) {
-  event.preventDefault();
-  let changedCityTemp1 = document.querySelector("#changed-city-now");
-  changedCityTemp1.innerHTML = `${Math.round(celsiusTemperature1)}°C`;
-  let changedCityTemp2 = document.querySelector(
-    "#changed-city-input-temp-high"
-  );
-  changedCityTemp2.innerHTML = `${Math.round(celsiusTemperature2)}°C`;
-  let changedCityTemp3 = document.querySelector("#changed-city-input-temp-low");
-  changedCityTemp3.innerHTML = `${Math.round(celsiusTemperature3)}°C`;
-}
-
-function convertToFahrenheit(event) {
-  event.preventDefault();
-  let fahrenheitTemperature1 = Math.round((celsiusTemperature1 * 9) / 4 + 32);
-  let changedCityTemp1 = document.querySelector("#changed-city-now");
-  changedCityTemp1.innerHTML = `${fahrenheitTemperature1}°F`;
-  let fahrenheitTemperature2 = Math.round((celsiusTemperature2 * 9) / 4 + 32);
-  let changedCityTemp2 = document.querySelector(
-    "#changed-city-input-temp-high"
-  );
-  changedCityTemp2.innerHTML = `${fahrenheitTemperature2}°F`;
-  let fahrenheitTemperature3 = Math.round((celsiusTemperature3 * 9) / 4 + 32);
-  let changedCityTemp3 = document.querySelector("#changed-city-input-temp-low");
-  changedCityTemp3.innerHTML = `${fahrenheitTemperature3}°F`;
 }
 
 function convertIntoKPH(event) {
@@ -177,12 +146,6 @@ let celsiusTemperature1 = null;
 let celsiusTemperature2 = null;
 let celsiusTemperature3 = null;
 let newWindSpeed = null;
-
-let convertFahrenheit = document.querySelector("#tempF");
-convertFahrenheit.addEventListener("click", convertToFahrenheit);
-
-let convertCelsius = document.querySelector("#tempC");
-convertCelsius.addEventListener("click", convertToCelsius);
 
 let convertKPH = document.querySelector("#kilometresPerHour");
 convertKPH.addEventListener("click", convertIntoKPH);

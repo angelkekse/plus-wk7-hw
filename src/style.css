@@ -140,8 +140,6 @@ a.footnote2:hover {
 }
 
 li.convert,
-a.convert-celsius,
-a.convert-fahrenheit,
 a.convert-kph,
 a.convert-knots {
   color: #ec6e4c;
@@ -150,8 +148,6 @@ a.convert-knots {
   text-decoration: none;
 }
 
-.convert-celsius:hover,
-.convert-fahrenheit:hover,
 .convert-kph:hover,
 .convert-knots:hover {
   color: #ec6e4c;
@@ -174,11 +170,13 @@ a.convert-knots {
 }
 
 .wfmax {
-  font-family: "Abril Fatface", cursive;
-  color: #ec6e4c;
+  font-family: "Source Code Pro", monospace;
+
+  color: #4a4a4a;
 }
 
 .wfmin {
-  font-family: "Abril Fatface", cursive;
-  color: #ff9900;
+  font-family: "Source Code Pro", monospace;
+
+  color: #aaa;
 }
