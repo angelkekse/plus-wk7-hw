@@ -18,6 +18,7 @@ p.date-and-time {
   text-align: right;
   color: #33ccff;
   max-width: -30%;
+  transition: all 300ms ease-in-out;
 }
 
 .date-and-time:hover {
@@ -37,6 +38,7 @@ p.date-and-time {
   right: 0;
   margin: 7px;
   max-width: 30%;
+  transition: all 300ms ease-in-out;
 }
 .form-control:hover {
   border: 1px dashed #33ccff;
@@ -90,6 +92,7 @@ button.btn.current-location {
   background: #fff;
   border: 1px dashed #ff9900;
   border-radius: 3px;
+  transition: all 300ms ease-in-out;
 }
 
 button.btn.current-location:hover {
@@ -105,12 +108,14 @@ a.footnote1 {
   font-family: "Source Code Pro", monospace;
   color: #ff9900;
   text-decoration: none;
+  transition: all 300ms ease-in-out;
 }
 
 a.footnote2 {
   font-family: "Abril Fatface", cursive;
   color: #990000;
   text-decoration: none;
+  transition: all 300ms ease-in-out;
 }
 
 a.footnote1:hover {
@@ -146,6 +151,7 @@ a.convert-knots {
   text-align: right;
   font-size: small;
   text-decoration: none;
+  transition: all 300ms ease-in-out;
 }
 
 .convert-kph:hover,
